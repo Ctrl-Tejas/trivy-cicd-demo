@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4        # ✅ updated
 
       - name: Build Docker Image
         run: docker build -t my-app:latest .
@@ -25,5 +25,5 @@ jobs:
         with:
           image-ref: my-app:latest
           format: table
-          exit-code: '0'
+          exit-code: '0'               # ✅ won't fail pipeline
           severity: CRITICAL,HIGH,MEDIUM
